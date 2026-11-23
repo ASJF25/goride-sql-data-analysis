@@ -1,0 +1,14 @@
+1. Data quirks and how I handled them
+
+There are multiple Data quirks which was giving trouble to the data set .One of the major difference where the different rating scale Goride used 1-5 scale ,while Quickhope used a 1-10 scale. In this case i converted Quickhop ratings into 1-5 scale by dividing by 2 before calculating the average. Another major problem was the duplicate customers across platform as they were customers for both the platforms before. For this I have used customer IDs and available merge information to identify matching records instead of automatically treating every record as a different person.
+
+
+2. The two hardest questions and my approach
+
+Q12 and Q21 was the two questions I found difficulty with. In the Q12 I first tried comparing customer IDs and matching records directly. This was not sufficient because the same person could have different IDs on each platform. 
+But the same customer could have records in both GoRide and QuickHop with different customer IDs. I then used the available merge information and phone-number normalisation to improve the matching process.This helped me understand why matching records requires more than simply joining on customer IDs.Q21 was also challenging because I had to calculate collected revenue, refunded revenue and net revenue while considering different payment statuses and incorrect service types. At first, I grouped the payment amounts directly, but the results required additional conditions. So I used conditional logic with CASE statements to correct service types and separate successful payments from refunded payments. I then calculated net revenue and sorted the results based on net revenue.
+
+
+3. What I learned from the assignment
+
+This assignment helped me understand that working with real-world data involves much more than simply writing SELECT statements. One important thing I learned from this assignment is that combining data from multiple sources requires more than just joining tables. Before analysing the data, it is important to understand and standardise the data first. I also realised that small differences in data formats, duplicate records and inconsistent values can have a significant impact on the final results. In future projects, I will make sure to explore the data, check the relationships between tables and handle inconsistencies before starting the analysis. I also learned the importance of validating query results rather than assuming that a query is correct just because it executes without errors. This is something I believe will be useful in my future work with databases and data analysis.
